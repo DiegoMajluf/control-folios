@@ -1,0 +1,25 @@
+{
+  "name": "control-folios",
+  "version": "1.0.0",
+  "description": "Contrl de folios en Memoria para MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoMajluf/control-folios.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiegoMajluf/control-folios/issues"
+  },
+  "homepage": "https://github.com/DiegoMajluf/control-folios#readme",
+  "devDependencies": {
+    "@types/mongodb": "^3.1.1"
+  },
+  "peerDependencies": {
+    "mongodb": "*"
+  }
+}
