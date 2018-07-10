@@ -1,5 +1,5 @@
 import { ControlFolios } from ".";
-import { Db } from "./node_modules/@types/mongodb";
+import { Db } from "mongodb";
 
 const db = {
     collection: (name: string) => ({

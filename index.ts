@@ -1,6 +1,6 @@
 import { Db, ObjectId } from "mongodb";
 export class ControlFolios {
-    arbol: { [col: string]: { [field: string]: SubArbolType } } = {}
+    private arbol: { [col: string]: { [field: string]: SubArbolType } } = {}
     constructor(protected db: Db) { }
 
     /**
