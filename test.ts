@@ -1,4 +1,4 @@
-import { ControlFolios } from ".";
+import { ControlFolios } from "./index";
 import { Db } from "mongodb";
 
 const db = {
