@@ -17,8 +17,13 @@ export class ControlFolios {
 
         return this.ultimoFolio(collectionName, fieldFolio, ...fieldNamesFilters).then(folio => ++folio)
     }
-
-    async ultimoFolio(collectionName: string, fieldFolio: string, ...fieldNamesFilters:
+    /**
+     * Devuelve el último folio asignado para el control de folio especificado en los parámetros
+     * @param collectionName Es el nombre de la colleción en la base de datos que contiene el folio
+     * @param fieldFolio Es el nombre del campo dentro de la colleción que se debe incrementar
+     * @param fieldNamesFilters Un arreglo de campos con valor para los cuales se lleva un control del folio. Ej: idCliente
+     */
+    ultimoFolio(collectionName: string, fieldFolio: string, ...fieldNamesFilters:
         {
             fieldName: string,
             fieldValue: string | number | boolean | ObjectId | Date
@@ -48,6 +53,12 @@ export class ControlFolios {
         return ob.promiseValue
     }
 
+    /**
+     * Elimina de la memoria el registro de folios asociados al control especificado en los parámetros
+     * @param collectionName Es el nombre de la colleción en la base de datos que contiene el folio
+     * @param fieldFolio Es el nombre del campo dentro de la colleción que se debe incrementar
+     * @param fieldNamesFilters Un arreglo de campos con valor para los cuales se lleva un control del folio. Ej: idCliente
+     */
     resetFolio(collectionName: string, fieldFolio: string, ...fieldNamesFilters:
         {
             fieldName: string,
@@ -65,7 +76,7 @@ export class ControlFolios {
             fieldValue: string | number | boolean | ObjectId | Date
         }[]) {
 
-        return <{ promiseValue: Promise<number> }>fieldNamesFilters.reduce((acc, sa, i) => {
+        return <{ promiseValue?: Promise<number> }>fieldNamesFilters.reduce((acc, sa, i) => {
             if (!(sa.fieldName in acc)) acc[sa.fieldName] = {}
             let fv = sa.fieldValue
             if (typeof fv == 'object' && 'getMonth' in fv) fv = fv.toJSON()
