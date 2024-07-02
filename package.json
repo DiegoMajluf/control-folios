@@ -1,6 +1,6 @@
 {
   "name": "@belbi/control-folios",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Control de folios en Memoria para MongoDB",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/DiegoMajluf/control-folios#readme",
   "devDependencies": {
-    "mongodb": "^5.6.0"
+    "@types/node": "^20.14.9",
+    "mongodb": "^6.8.0"
   },
   "peerDependencies": {
     "mongodb": "*"
