@@ -83,6 +83,7 @@ export class ControlFolios {
     }
 
     private getFolioFromDb(filter: any, collectionName: string, fieldFolio: string, ...fieldNamesFilters: FieldNameFilter[]): Promise<number> {
+        let fieldFol = fieldFolio.split('.')
         return new Promise(async (res, rej) => {
             let base = await this.db
             res(base.collection(collectionName)
@@ -91,7 +92,7 @@ export class ControlFolios {
                 .limit(-1)
                 .toArray()
                 .then(x => x[0])
-                .then(x => x && x[fieldFolio] || 0))
+                .then(x => x && fieldFol.reduce((acc, field) => acc[field], x) || 0))
         })
     }
 }

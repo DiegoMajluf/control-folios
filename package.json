@@ -1,6 +1,6 @@
 {
   "name": "@belbi/control-folios",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Control de folios en Memoria para MongoDB",
   "main": "index.js",
   "scripts": {
